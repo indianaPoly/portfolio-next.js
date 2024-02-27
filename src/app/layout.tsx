@@ -1,3 +1,4 @@
+// 모든 페이지에 적용이 되는 레이아웃임.
 import type { Metadata } from "next";
 import "./globals.css";
 
