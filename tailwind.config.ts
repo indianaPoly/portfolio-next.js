@@ -8,7 +8,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      textColor: {
+      color: {
         white: "#FFFFFF",
         black: "#111111",
         gray1: "#525252",
