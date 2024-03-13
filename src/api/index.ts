@@ -1,8 +1,8 @@
-import { NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse } from "next";
 import { ProjectData } from "@/types";
 
-const handler = (res: NextApiResponse) => {
-  const projectData: ProjectData[] = [
+const handler = (req: NextApiRequest, res: NextApiResponse<ProjectData[]>) => {
+  const projectData = [
     {
       title: "Camplus",
       intro: "대학생 도움 홈페이지",
@@ -26,6 +26,13 @@ const handler = (res: NextApiResponse) => {
         "https://github.com/indianaPoly/indianaPoly.github.io/tree/main/src",
     },
   ];
+
+  switch (req.method) {
+    case "GET":
+      res.status(200).json(projectData);
+    case "POST":
+  }
+
   res.status(200).json(projectData);
 };
 
