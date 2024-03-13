@@ -11,15 +11,19 @@ export const Navbar = () => {
 
   const navbarItem: NavbarItem[] = [
     {
-      name: "활동 내역",
+      name: "<메인 페이지 />",
+      link: "/",
+    },
+    {
+      name: "<활동 내역 />",
       link: "activity",
     },
     {
-      name: "프로젝트",
+      name: "<프로젝트 />",
       link: "project",
     },
     {
-      name: "블로그",
+      name: "<블로그 />",
       link: "blogs",
     },
   ];
@@ -41,32 +45,26 @@ export const Navbar = () => {
     },
   };
 
-  const USER_NAME = "Poly";
+  const USER_NAME = "고현림";
 
   return (
     <>
-      <nav className="flex flex-col">
-        <div className="flex items-center justify-between p-[20px]">
-          <Link href="/">
-            <span className=" text-black font-semibold text-[30px]">
-              {USER_NAME}의 대학생활
-            </span>
-          </Link>
-          <ul className="flex gap-[30px]">
-            {navbarItem.map((item) => {
-              return (
-                <li key={item.link}>
-                  <Link href={item.link}>
-                    <span className="text-gray2 font-medium text-[15px] hover:text-black">
-                      {item.name}
-                    </span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-          {/* <button className="" onClick={() => setIsOpen(!isOpen)}>=</button> */}
-        </div>
+      <nav className="flex flex-col justify-center items-center p-[20px]">
+        <ul className="flex gap-[100px]">
+          {navbarItem.map((item) => {
+            return (
+              <li key={item.link}>
+                <Link href={item.link}>
+                  <span className=" text-gray-500 font-medium text-[15px] hover:text-black">
+                    {item.name}
+                  </span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+
+        {/* <button className="" onClick={() => setIsOpen(!isOpen)}>=</button> */}
 
         {/* <div>
           <AnimatePresence>
