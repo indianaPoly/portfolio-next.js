@@ -1,12 +1,12 @@
 export type ActivityFeature = "internal" | "external";
 type ActivityCategory = "tech" | "non-tech" | "etc";
 type ActivityInternalScope =
-  | "숭실대학교"
+  | "숭x실대학교"
   | "교양 수업"
   | "전공 수업"
   | "동아리";
 
-export type ActivityItemValue<T extends ActivityFeature> = {
+export type ActivityItem<T extends ActivityFeature> = {
   activityName: string;
   activityPeriod: string;
   activityCategory: ActivityCategory;
@@ -17,13 +17,3 @@ export type ActivityItemValue<T extends ActivityFeature> = {
   : {
       activityScope?: undefined;
     });
-
-/**
- * ActivityKind {
- *  ActivityIiemValue
- * }
- */
-export type ActivityItem = Record<
-  ActivityFeature,
-  ActivityItemValue<"internal">[] | ActivityItemValue<"external">[]
->;
